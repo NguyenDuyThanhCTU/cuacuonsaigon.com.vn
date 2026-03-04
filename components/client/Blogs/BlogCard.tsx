@@ -1,0 +1,53 @@
+import { PostProps } from "@assets/props/PropsPost";
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
+import { CiClock1 } from "react-icons/ci";
+import { FaUser } from "react-icons/fa";
+
+const BlogCard = ({ Data }: { Data: PostProps }) => {
+  return (
+    <div className="text-black">
+      <Link href={`/${Data?.url}`}>
+        <div className="border border-t-mainYellow h-[225px] overflow-hidden rounded-t-md">
+          <Image
+            src={Data?.image}
+            alt="Blogs"
+            width={500}
+            height={500}
+            className="h-full w-full object-cover hover:scale-105 duration-300 rounded-t-md"
+          />
+        </div>
+      </Link>
+      <div className="rounded-b-md bg-white px-4 py-3 flex flex-col gap-2">
+        <Link
+          className="  duration-300 font-bold text-center truncate2 hover:text-main"
+          href={`/${Data?.url}`}
+        >
+          {Data?.title}
+        </Link>
+        <div className="flex items-center justify-center text-[14px] text-main gap-2 flex-col">
+          <div className="flex items-center gap-1">
+            <CiClock1 />
+            <span>{Data?.date}</span>
+          </div>
+          <div className="flex items-center gap-1">
+            <FaUser />
+            <span>
+              {Data?.author
+                ? Data?.author
+                : "Cửa tự động 24h - Hotline: 0879 355 661 - 0796 119 395"}
+            </span>
+          </div>
+        </div>
+        <div>
+          <div className="font-light text-[14px] truncate2">
+            {Data?.description}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default BlogCard;
