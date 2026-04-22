@@ -1,0 +1,17 @@
+# Cho phép tất cả các bot tìm kiếm (Google, Bing, v.v.)
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+
+# ĐẶC BIỆT QUAN TRỌNG: Cho phép Bot của Google Ads
+# Ngay cả khi bạn chặn một số thư mục ở trên, hãy cho phép AdsBot truy cập để check landing page
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: AdsBot-Google-Mobile
+Allow: /
+
+# Link tới Sitemap của bạn (thay bằng domain thật)
+Sitemap: https://www.cuacuonsaigon.com.vn/sitemap.xml
