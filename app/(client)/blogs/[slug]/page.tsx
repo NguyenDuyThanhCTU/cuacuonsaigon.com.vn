@@ -30,7 +30,7 @@ export async function generateMetadata({
 
   return {
     title: PostTitle.CollectionName
-      ? `${PostTitle.CollectionName} - Tiệm bánh Cửa tự động 24h - Hotline: 0879 355 661 - 0796 119 395`
+      ? `${PostTitle.CollectionName} -  Cửa tự động 24h - Hotline: 0879 355 661 - 0796 119 395`
       : "Blogs",
   };
 }
