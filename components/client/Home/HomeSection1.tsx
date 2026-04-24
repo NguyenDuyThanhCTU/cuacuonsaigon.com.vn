@@ -89,7 +89,7 @@ const HomeSection1 = ({ ContactData }: { ContactData: ContactProps }) => {
             <div>
               <Image
                 alt="banner"
-                src="https://firebasestorage.googleapis.com/v0/b/xetaiminhtri.appspot.com/o/avatar%2Fa9pzkwnSIWKWbCJtgdUlxEsuCgXaWWshw3LyQxGLzlgpRe5WdF.jpg?alt=media&token=5ebc6d05-d18a-4231-ba68-8e200f9e5cb4"
+                src="https://firebasestorage.googleapis.com/v0/b/cuacuonsaigon-ff6a3.firebasestorage.app/o/avatar%2F8Px4EjGtZygGjKDwBoGoi9FPpXPBTzQAgXF8OomZp0vsO7Bd7l.png?alt=media&token=43bcc288-cd14-4a00-bc9a-a56db0266d7e"
                 width={500}
                 height={500}
               />
@@ -136,7 +136,7 @@ const HomeSection1 = ({ ContactData }: { ContactData: ContactProps }) => {
             <div>
               <Image
                 alt="banner"
-                src="https://firebasestorage.googleapis.com/v0/b/xetaiminhtri.appspot.com/o/avatar%2FQgzC8bfE14tiuYApoCpS0LRnFWCBoIeeHM0ZqmxmYSPJt3luUK.jpg?alt=media&token=dc5792b8-04f3-4d81-8cf8-caa1c069af30"
+                src="https://firebasestorage.googleapis.com/v0/b/cuacuonsaigon-ff6a3.firebasestorage.app/o/avatar%2FYGt1DJ6hl3zNUl867RhGhdrmREt6OoREMLeXOYtOMiE23OykNn.png?alt=media&token=114654ea-b8ba-4358-a6ac-5f6864e25b35"
                 width={500}
                 height={500}
               />

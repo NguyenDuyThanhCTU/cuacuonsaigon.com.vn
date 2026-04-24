@@ -58,29 +58,29 @@ function Hotline({ Config }: { Config: Array<any> }) {
 
   const HotlineItems = [
     {
-      icon: "https://firebasestorage.googleapis.com/v0/b/klatexpress.appspot.com/o/shop_social_sidebar_item_image_1_icon.webp?alt=media&token=2e55fbe9-6c56-474f-a07b-ddc0471be014",
+      icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Icon_of_Zalo.svg/120px-Icon_of_Zalo.svg.png?_=20221117065843",
       label: "Zalo",
       link: SocialMedia?.zalo ? SocialMedia?.zalo : "https://zalo.me",
     },
     {
-      icon: "https://firebasestorage.googleapis.com/v0/b/klatexpress.appspot.com/o/facebook__6__53aaa8d352524d3eb025af5203eaa437_icon.webp?alt=media&token=2b491511-e084-4c3a-9100-b56e765415eb",
+      icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/2023_Facebook_icon.svg/120px-2023_Facebook_icon.svg.png?_=20231011122028",
       label: "Facebook",
       link: SocialMedia?.facebook
         ? SocialMedia?.facebook
         : "https://facebook.com",
     },
     {
-      icon: "https://firebasestorage.googleapis.com/v0/b/klatexpress.appspot.com/o/shop_social_sidebar_item_image_3_icon.webp?alt=media&token=76d3867c-06cc-4f5d-a350-91b834e86ab3",
+      icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Tiktok_icon.svg/120px-Tiktok_icon.svg.png?_=20240827133148",
       label: "Tiktok",
       link: SocialMedia?.tiktok ? SocialMedia?.tiktok : "https://tiktok.com",
     },
+    // {
+    //   icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/120px-YouTube_full-color_icon_%282017%29.svg.png",
+    //   label: "Youtube",
+    //   link: SocialMedia?.Youtube ? SocialMedia?.Youtube : "https://Youtube.com",
+    // },
     {
-      icon: "https://firebasestorage.googleapis.com/v0/b/klatexpress.appspot.com/o/shop_social_sidebar_item_image_5_icon.webp?alt=media&token=f332afa0-a0dd-49aa-9cf9-8154cc4fdfd3",
-      label: "Youtube",
-      link: SocialMedia?.Youtube ? SocialMedia?.Youtube : "https://Youtube.com",
-    },
-    {
-      icon: "https://firebasestorage.googleapis.com/v0/b/klatexpress.appspot.com/o/shop_social_sidebar_item_image_7_icon.webp?alt=media&token=67ceb5a9-b1c4-4e81-92ba-b04755ef3896",
+      icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Phone_iOS.svg/120px-Phone_iOS.svg.png",
       label: "Hỗ trợ 24/24",
       link: Contact?.Hotline ? ` tel:${Contact?.Hotline}` : "tel:",
     },

@@ -4,9 +4,7 @@ import Link from "next/link";
 import React from "react";
 
 const HomeSection2 = ({ Posts }: { Posts: PostProps[] }) => {
-  const Service = Posts?.filter(
-    (item) => item.level0 === "dich-vu-sua-chua" && item.isHighlight === true
-  );
+  const Service = Posts?.filter((item) => item.level0 === "dich-vu-sua-chua");
   return (
     <div className="bg-slate-100">
       <div className="d:w-[1200px] p:w-auto d:mx-auto p:mx-2 py-10">

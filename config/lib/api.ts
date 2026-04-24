@@ -2,7 +2,7 @@ import { convertDate, convertFieldValue } from "./Handle";
 
 export async function find(CollectionName: string) {
   let documents: any[] = [];
-  let firebaseEndpoint = `https://firestore.googleapis.com/v1/projects/xetaiminhtri/databases/(default)/documents/${CollectionName}`;
+  let firebaseEndpoint = `https://firestore.googleapis.com/v1/projects/cuacuonsaigon-ff6a3/databases/(default)/documents/${CollectionName}`;
 
   async function fetchAndProcessData(nextPageToken?: string) {
     try {

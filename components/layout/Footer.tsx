@@ -28,19 +28,19 @@ const Footer = ({ Config, Posts }: FooterProps) => {
 
   const SocialItems = [
     {
-      icon: "https://firebasestorage.googleapis.com/v0/b/klatexpress.appspot.com/o/facebook__6__53aaa8d352524d3eb025af5203eaa437_icon.webp?alt=media&token=2b491511-e084-4c3a-9100-b56e765415eb",
+      icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/2023_Facebook_icon.svg/120px-2023_Facebook_icon.svg.png?_=20231011122028",
       link: SocialMedia?.facebook ? SocialMedia?.facebook : "",
     },
     {
-      icon: "https://firebasestorage.googleapis.com/v0/b/klatexpress.appspot.com/o/tik-tok_d85bb4e7468c43ac9ed5437649b7405c_icon.webp?alt=media&token=617e6e75-c600-4d32-a764-f0026d42b63e",
+      icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Tiktok_icon.svg/120px-Tiktok_icon.svg.png?_=20240827133148",
       link: SocialMedia?.tiktok ? SocialMedia?.tiktok : "",
     },
     {
-      icon: "https://firebasestorage.googleapis.com/v0/b/klatexpress.appspot.com/o/youtube__5__4f04522e10494557a651f53a33ad4d76_icon.webp?alt=media&token=dd0a7105-47c9-4852-ae3b-9dcd0c80841e",
+      icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/120px-YouTube_full-color_icon_%282017%29.svg.png",
       link: SocialMedia?.Youtube ? SocialMedia?.Youtube : "",
     },
     {
-      icon: "https://firebasestorage.googleapis.com/v0/b/klatexpress.appspot.com/o/z5851627838739_4a80404aef3cea1f5a9d6ed52df04917.png?alt=media&token=69e862a4-4aee-411e-9c65-858ed2adb892",
+      icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Icon_of_Zalo.svg/120px-Icon_of_Zalo.svg.png?_=20221117065843",
       link: SocialMedia?.zalo ? SocialMedia?.zalo : "",
     },
   ];

@@ -2,19 +2,19 @@ import { initializeApp } from "firebase/app";
 import { initializeFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 const firebaseConfig = {
-  apiKey: "AIzaSyD3lnZMGJMlUQ3N2ZsJ0Qp_QvtmNWOZ1X4",
+  apiKey: "AIzaSyDMOouORHB_fUK39D2xy7T_feL0yhHBi_A",
 
-  authDomain: "xetaiminhtri.firebaseapp.com",
+  authDomain: "cuacuonsaigon-ff6a3.firebaseapp.com",
 
-  projectId: "xetaiminhtri",
+  projectId: "cuacuonsaigon-ff6a3",
 
-  storageBucket: "xetaiminhtri.appspot.com",
+  storageBucket: "cuacuonsaigon-ff6a3.firebasestorage.app",
 
-  messagingSenderId: "1003617252873",
+  messagingSenderId: "1050826307548",
 
-  appId: "1:1003617252873:web:c3bea9da8f63adb11e2ad8",
+  appId: "1:1050826307548:web:0dd4f5732b9f5e2bde0119",
 
-  measurementId: "G-YZ2GMPE8ZS",
+  measurementId: "G-L6HN38J9E3",
 };
 
 const app = initializeApp(firebaseConfig);
