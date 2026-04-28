@@ -29,16 +29,36 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <StateProvider>
-        <body className=" font-light">
+      <head>
+        {/* Xác thực Google Search Console & Google Merchant Center */}
+
+        {/* Thêm Google Tag Manager Script */}
+        <Script id="google-tag-manager" strategy="afterInteractive">
+          {`
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-K8T6FC66');
+          `}
+        </Script>
+      </head>
+
+      <body className=" font-light">
+        <StateProvider>
+          <noscript
+            dangerouslySetInnerHTML={{
+              __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K8T6FC66" height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
+            }}
+          />
           <Header Config={Config} Posts={Posts} Category={ProductCategory} />
           <main className="d:mt-[0px] p:mt-[100px]">{children}</main>
           <Footer Config={Config} Posts={Posts} />
 
           <Hotline Config={Config} />
           <Copyright />
-        </body>
-      </StateProvider>
+        </StateProvider>
+      </body>
     </html>
   );
 }
