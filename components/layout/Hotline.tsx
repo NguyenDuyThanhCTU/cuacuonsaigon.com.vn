@@ -109,7 +109,7 @@ function Hotline({ Config }: { Config: Array<any> }) {
             </Link>
           ))}
 
-          <div
+          {/* <div
             onClick={handleScrollToTop}
             className={`${
               showButton ? " pullup " : " opacity-0 transform-none invisible"
@@ -129,7 +129,7 @@ function Hotline({ Config }: { Config: Array<any> }) {
                 <div className="col-span-2">Lên đầu trang</div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="d:hidden p:block fixed right-0 top-[40%] z-50">
@@ -152,7 +152,7 @@ function Hotline({ Config }: { Config: Array<any> }) {
             </Link>
           ))}
 
-          <div
+          {/* <div
             onClick={handleScrollToTop}
             className={`${
               showButton ? " pullup " : " opacity-0 transform-none invisible"
@@ -171,7 +171,7 @@ function Hotline({ Config }: { Config: Array<any> }) {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="fixed bottom-7 right-10  box-border flex flex-col gap-5">
