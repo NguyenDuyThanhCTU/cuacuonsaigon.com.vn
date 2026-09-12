@@ -1,16 +1,12 @@
 "use client";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import { PiHeartThin, PiShoppingCartThin, PiUserThin } from "react-icons/pi";
-import { IoMenuOutline, IoSearch, IoSearchOutline } from "react-icons/io5";
+import { IoSearchOutline } from "react-icons/io5";
 import { Badge, Drawer } from "antd";
 
 import Link from "next/link";
-import { FiMenu } from "react-icons/fi";
 
-import { useTypingEffect } from "@components/items/ClientHandle";
-import { useStateProvider } from "@context/StateProvider";
-import { CategoryProps } from "@assets/props/Props";
+import { useTypingEffect } from "@components/items/useTypingEffect";
 import { IoIosMenu } from "react-icons/io";
 import { ContactProps } from "@assets/props/PropsConfig";
 import { FaSearch } from "react-icons/fa";
@@ -21,16 +17,16 @@ interface MobileProps {
   Header: any[];
 }
 
+const SEARCH_PLACEHOLDERS = [
+  "Bạn cần tìm gì ...?",
+  "Nhập tên sản phẩm cần tìm ...",
+  "Tìm kiếm sản phẩm ...",
+];
+
 const Mobile = ({ ContactData, Header }: MobileProps) => {
   const [isOpenMenu, setOpenMenu] = useState(false);
   const [search, setSearch] = useState("");
   const [isOpenSearch, setOpenSearch] = useState(false);
-
-  const texts = [
-    "Bạn cần tìm gì ...?",
-    "Nhập tên sản phẩm cần tìm ...",
-    "Tìm kiếm sản phẩm ...",
-  ];
 
   const [lastScrollTop, setLastScrollTop] = useState(0);
   const scrollTop: any =
@@ -86,7 +82,7 @@ const Mobile = ({ ContactData, Header }: MobileProps) => {
           type="text"
           onChange={(e) => setSearch(e.target.value)}
           className="w-full outline-none px-3"
-          placeholder={useTypingEffect(texts, 50)}
+          placeholder={useTypingEffect(SEARCH_PLACEHOLDERS, 50)}
         />
         <Link
           className="text-[22px]"

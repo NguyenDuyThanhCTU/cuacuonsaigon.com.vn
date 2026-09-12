@@ -186,3 +186,191 @@
 // };
 
 // export default Menu;
+
+"use client";
+
+import { ContactProps, SocialMediaProps } from "@assets/props/PropsConfig";
+import { LocalFindById } from "@components/items/Handle";
+import { useTypingEffect } from "@components/items/useTypingEffect";
+import { useStateProvider } from "@context/StateProvider";
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import { GrSend } from "react-icons/gr";
+import { IoMdArrowDropright } from "react-icons/io";
+import { RxCross2 } from "react-icons/rx";
+import slugify from "slugify";
+interface MenuProps {
+  setIsOpen: (isOpen: boolean) => void;
+  Header: any[];
+}
+
+const CONSULTATION_PLACEHOLDERS = [
+  "Bạn cần tư vấn?",
+  "Nhập địa chỉ email của bạn...",
+];
+
+const MobileMenu = ({ setIsOpen, Header }: MenuProps) => {
+  const [isOpenMenu, setOpenMenu] = useState({
+    lv1: "",
+    lv2: "",
+  });
+
+  const { isGlobal } = useStateProvider();
+  const ContactData: ContactProps = LocalFindById(isGlobal?.Config, "contact");
+  const SocialMedia: SocialMediaProps = LocalFindById(
+    isGlobal?.Config,
+    "SocialMedia"
+  );
+
+  const SocialItems = [
+    {
+      icon: "https://firebasestorage.googleapis.com/v0/b/klatexpress.appspot.com/o/facebook__6__53aaa8d352524d3eb025af5203eaa437_icon.webp?alt=media&token=2b491511-e084-4c3a-9100-b56e765415eb",
+      link: SocialMedia?.facebook || "",
+    },
+    {
+      icon: "https://firebasestorage.googleapis.com/v0/b/klatexpress.appspot.com/o/tik-tok_d85bb4e7468c43ac9ed5437649b7405c_icon.webp?alt=media&token=617e6e75-c600-4d32-a764-f0026d42b63e",
+      link: SocialMedia?.tiktok || "",
+    },
+    {
+      icon: "https://firebasestorage.googleapis.com/v0/b/klatexpress.appspot.com/o/youtube__5__4f04522e10494557a651f53a33ad4d76_icon.webp?alt=media&token=dd0a7105-47c9-4852-ae3b-9dcd0c80841e",
+      link: SocialMedia?.Youtube || "",
+    },
+    {
+      icon: "https://firebasestorage.googleapis.com/v0/b/klatexpress.appspot.com/o/z5851627838739_4a80404aef3cea1f5a9d6ed52df04917.png?alt=media&token=69e862a4-6e09-46a0-8476-9f1eb945b9df",
+      link: SocialMedia?.zalo || "",
+    },
+  ];
+
+  return (
+    <div className="font-Nunito h-full flex flex-col justify-between">
+      <div>
+        <div className="flex justify-between px-5 text-[24px] items-center py-2 border-b">
+          <h3 className="font-normal">Menu</h3>
+          <div onClick={() => setIsOpen(false)}>
+            <RxCross2 />
+          </div>
+        </div>
+        <div className="p-4 flex flex-col gap-4 text-[13px]">
+          {Header.map((item, index) => (
+            <div key={index}>
+              <div className="flex justify-between w-full items-center">
+                <Link
+                  onClick={() => setIsOpen(false)}
+       href={`/${item.value}`}
+                  className={
+                    (isOpenMenu.lv1 === item.value ? "text-main " : "") +
+                    "font-semibold"
+                  }
+                >
+                  {item.label}
+                </Link>
+
+                {item.children && item.children.length > 0 && (
+                  <IoMdArrowDropright
+                    className={
+                      isOpenMenu.lv1 === item.value
+                        ? "rotate-90 duration-300 text-mainRed"
+                        : ""
+                    }
+                    onClick={() =>
+                      setOpenMenu({
+                        ...isOpenMenu,
+                        lv1: isOpenMenu.lv1 === item.value ? "" : item.value,
+                      })
+                    }
+                  />
+                )}
+              </div>
+
+              {item.children && item.children.length > 0 && (
+                <div
+                  className={
+                    "animate__animated flex flex-col mt-4 gap-4 ml-6 " +
+                    (isOpenMenu.lv1 === item.value
+                      ? "block animate__fadeIn"
+                      : "hidden")
+                  }
+                >
+                  {item.children.map((child: any, childIndex: number) => (
+                    <div key={childIndex}>
+                      <Link
+                        onClick={() => setIsOpen(false)}
+                  href={`/san-pham/${slugify(child.level0, { locale: "vi", lower: true })}`}
+                        className={
+                          isOpenMenu.lv2 === child.level0
+                            ? "text-mainOrange font-normal"
+                            : ""
+                        }
+                      >
+                        {child.level0}
+                      </Link>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="px-3 py-2 font-normal flex flex-col gap-2">
+        <h3 className="text-red-600 text-[18px] uppercase font-semibold">
+          Hỗ trợ 24/24
+        </h3>
+        <p className="text-gray-500">
+          Đừng ngần ngại liên hệ chúng tôi
+          <br /> Hotline:{" "}
+          <Link
+            onClick={() => setIsOpen(false)}
+            className="text-blink hover:underline"
+            href={"tel:" + ContactData?.Hotline}
+          >
+            {ContactData?.Hotline}
+          </Link>{" "}
+          -{" "}
+          <Link
+            onClick={() => setIsOpen(false)}
+            className="text-blink hover:underline"
+            href={"tel:" + ContactData?.PhoneNumber}
+          >
+            {ContactData?.PhoneNumber}
+          </Link>
+        </p>
+        <div className="border">
+          <div className="w-full flex justify-between p-1">
+            <input
+              type="text"
+              className="w-full outline-none text-[17px] px-2 font-light text-black"
+              placeholder={useTypingEffect(CONSULTATION_PLACEHOLDERS, 50)}
+            />
+            <div className="text-[23px] px-2">
+              <GrSend />
+            </div>
+          </div>
+        </div>
+
+        <div className="flex gap-4">
+          {SocialItems.map((item, index) => (
+            <Link
+              href={item.link}
+              target="_blank"
+              key={index}
+              className="w-7 h-7 rounded-full"
+            >
+              <Image
+                src={item.icon}
+                alt="social"
+                width={100}
+                height={100}
+                className="w-full h-full object-cover"
+              />
+            </Link>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default MobileMenu;
